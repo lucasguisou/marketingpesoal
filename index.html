@@ -1,111 +1,377 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Renda Digital Estratégica</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #fdfbfb, #ebedee);
-      color: #111;
-    }
-    header {
-      background: linear-gradient(135deg, #0d6efd, #0b5ed7);
-      color: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      background-color: #25d366;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-      display: inline-block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .cta-button:hover {
-      background-color: #1ebd5a;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: #fff;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.07);
-    }
-    section h2 {
-      color: #0d6efd;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polydraft – Desenhos Técnicos Online</title>
+    <meta
+      name="description"
+      content="Plantas, detalhamentos e projetos elétricos entregues remotamente para todo o Brasil. Orçamento em 60 min. Revisões ilimitadas."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue-700: #0072ce;
+        --blue-500: #00a0ff;
+        --gray-50: #f5f7f9;
+        --gray-900: #2e2e2e;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Lato', sans-serif;
+        color: var(--gray-900);
+        line-height: 1.6;
+        background-color: #ffffff;
+        scroll-behavior: smooth;
+      }
+      h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 0.5em;
+        color: var(--blue-700);
+      }
+      /* Layout helpers */
+      .container {
+        width: 90%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 3rem 0;
+      }
+      .btn {
+        display: inline-block;
+        background-color: var(--blue-700);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+      .btn:hover {
+        background-color: var(--blue-500);
+      }
+      /* Hero */
+      #hero {
+        background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-500) 100%);
+        color: #fff;
+        text-align: center;
+        padding: 5rem 1rem 6rem;
+      }
+      #hero h1 {
+        font-size: 2.5rem;
+        color: #fff;
+      }
+      #hero p {
+        font-size: 1.1rem;
+        margin: 1.5rem 0 2.5rem;
+      }
+      #hero img {
+        max-width: 680px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      /* Services */
+      #services {
+        background: var(--gray-50);
+      }
+      .services-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .service-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+      .service-card h3 {
+        margin-top: 1rem;
+        font-size: 1.15rem;
+      }
+      /* Process */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        counter-reset: step;
+      }
+      .step {
+        position: relative;
+        padding-left: 3rem;
+      }
+      .step:before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        background: var(--blue-700);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      /* Cases */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid var(--gray-50);
+        text-align: left;
+        font-size: 0.95rem;
+      }
+      th {
+        background: var(--gray-50);
+        font-weight: 600;
+      }
+      /* Form */
+      form {
+        display: grid;
+        gap: 1rem;
+      }
+      input, textarea, select {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+      textarea { resize: vertical; min-height: 120px; }
+      /* FAQ */
+      details {
+        background: #fff;
+        border: 1px solid #e4e4e4;
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+      }
+      summary {
+        font-weight: 600;
+        cursor: pointer;
+      }
+      /* Footer */
+      footer {
+        background: var(--gray-900);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+      }
+      /* WhatsApp Floating */
+      .wa-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      .wa-float img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="container">
+        <h1>Desenhos técnicos prontos em até 48&nbsp;h</h1>
+        <p>Arquitetura, civil, mecânica e elétrica — <strong>100&nbsp;% online</strong>, revisões ilimitadas.</p>
+        <a href="#orcamento" class="btn">Peça seu orçamento</a>
+        <div style="margin-top:4rem">
+          <img src="https://dummyimage.com/680x420/ffffff/0072ce.png&text=Preview+DWG" alt="Mockup Planta DWG" />
+        </div>
+      </div>
+    </section>
 
-<header>
-  <h1>Transforme Seu Conhecimento em Renda</h1>
-  <p>Curso prático para você criar sua renda online de forma simples e estruturada.</p>
-  <a href="https://wa.me/5512991674486" class="cta-button" target="_blank">Falar com Especialista no WhatsApp</a>
-</header>
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=A" alt="Arquitetura" />
+            <h3>Plantas Arquitetônicas</h3>
+            <p>NBR‑6492, cortes, fachadas e layout de interiores.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=E" alt="Estrutural" />
+            <h3>Detalhamento Estrutural</h3>
+            <p>Concreto armado, aço e madeira, NBR‑6118 e 15.200.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=P" alt="Elétrica" />
+            <h3>Projetos Elétricos</h3>
+            <p>Quadros, fiação, aterramento, NBR‑5410/NBR‑14039.</p>
+          </div>
+          <div class="service-card">
+            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=M" alt="Mecânica" />
+            <h3>Peças Mecânicas</h3>
+            <p>Explodidos, isométricos, GD&T e listas de peças.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Por que Esse Curso?</h2>
-  <p>Com métodos claros e diretos, você aprenderá como gerar renda mesmo que esteja começando do zero. Nada de promessas milagrosas, apenas o que funciona.</p>
-</section>
+    <!-- Process -->
+    <section id="process">
+      <div class="container">
+        <h2>Como Funciona</h2>
+        <div class="steps">
+          <div class="step">
+            <h3>Envie arquivos ou croqui</h3>
+            <p>Preencha o formulário e faça upload do DWG, PDF ou sketch.</p>
+          </div>
+          <div class="step">
+            <h3>Receba orçamento em 60&nbsp;min</h3>
+            <p>Viabilidade, preço fechado e prazo no seu e-mail.</p>
+          </div>
+          <div class="step">
+            <h3>Entrega digital</h3>
+            <p>Receba DWG/DXF/PDF e solicite revisões ilimitadas por 7 dias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Conteúdo do Curso</h2>
-  <ul>
-    <li>Modelos de renda digital validados</li>
-    <li>Ferramentas gratuitas e acessíveis</li>
-    <li>Como fazer sua primeira venda</li>
-    <li>Marketing básico para começar com o pé direito</li>
-    <li>Plano de crescimento e escalabilidade</li>
-  </ul>
-</section>
+    <!-- Cases -->
+    <section id="cases" style="background:var(--gray-50)">
+      <div class="container">
+        <h2>Casos de Sucesso</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Descrição</th>
+              <th>Tempo</th>
+              <th>Disciplina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A‑019</td>
+              <td>Reforma residencial 120 m² – DF</td>
+              <td>36 h</td>
+              <td>Elétrico</td>
+            </tr>
+            <tr>
+              <td>C‑044</td>
+              <td>Detalhamento pórtico metálico 19 t – RS</td>
+              <td>52 h</td>
+              <td>Estrutural</td>
+            </tr>
+            <tr>
+              <td>M‑031</td>
+              <td>Explodido de redutor engrenagens – MG</td>
+              <td>24 h</td>
+              <td>Mecânico</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<section>
-  <h2>Pra Quem é?</h2>
-  <p>Para quem está buscando uma fonte de renda extra com pouco investimento e quer aprender o caminho certo com apoio e clareza.</p>
-</section>
+    <!-- Orçamento Form -->
+    <section id="orcamento">
+      <div class="container">
+        <h2>Peça seu Orçamento</h2>
+        <form action="https://formspree.io/f/SEU_TOKEN" method="POST">
+          <label>
+            Disciplina
+            <select name="disciplina" required>
+              <option value="">Selecione…</option>
+              <option>Arquitetura</option>
+              <option>Estrutural</option>
+              <option>Elétrica</option>
+              <option>Mecânica</option>
+            </select>
+          </label>
+          <label>
+            Área / Nº peças
+            <input type="text" name="area" placeholder="120 m² ou 3 vistas" required />
+          </label>
+          <label>
+            Prazo desejado
+            <input type="date" name="prazo" required />
+          </label>
+          <label>
+            Descrição adicional
+            <textarea name="descricao" placeholder="Norma de referência, nível de detalhe…" required></textarea>
+          </label>
+          <label>
+            Seu e‑mail
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            WhatsApp
+            <input type="tel" name="whatsapp" placeholder="+55 (DDD) 9xxxx‑xxxx" />
+          </label>
+          <button type="submit" class="btn">Enviar orçamento</button>
+        </form>
+        <p style="margin-top:1rem;font-size:0.9rem;color:#555">Prometemos responder em até 60 min no horário comercial.</p>
+      </div>
+    </section>
 
-<section>
-  <h2>Promoção Limitada!</h2>
-  <p><strong>De R$ 79,90 por apenas R$ 39,90</strong>. Valor promocional por tempo limitado.</p>
-  <a href="https://wa.me/5512991674486" class="cta-button" target="_blank">Garanta sua vaga agora</a>
-</section>
+    <!-- FAQ -->
+    <section id="faq" style="background:var(--gray-50)">
+      <div class="container">
+        <h2>Perguntas Frequentes</h2>
+        <details>
+          <summary>Vocês fazem visitas presenciais?</summary>
+          <p>Não, todo o processo é 100&nbsp;% online. Recebemos e entregamos arquivos digitais.</p>
+        </details>
+        <details>
+          <summary>Quais softwares utilizam?</summary>
+          <p>AutoCAD 2025, Revit 2024 e SolidWorks 2023.</p>
+        </details>
+        <details>
+          <summary>Emitimos ART/CREA?</summary>
+          <p>Sim, mediante solicitação e custo adicional.</p>
+        </details>
+        <details>
+          <summary>Quais formatos de entrega?</summary>
+          <p>DWG, DXF, PDF e IFC (para BIM).</p>
+        </details>
+        <details>
+          <summary>Qual o custo médio?</summary>
+          <p>A partir de R$ 6,90/m² ou R$ 120/desenho mecânico.</p>
+        </details>
+      </div>
+    </section>
 
-<footer>
-  *Vagas limitadas para garantir qualidade no atendimento.*
-</footer>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span id="year"></span> Polydraft Serviços Técnicos – Todos os direitos reservados.</p>
+      <p>Termos de Serviço | Política de SLA</p>
+    </footer>
 
-</body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511999999999" class="wa-float" target="_blank" rel="noopener">
+      <img src="https://static.thenounproject.com/png/3387005-200.png" alt="Fale no WhatsApp" />
+    </a>
+
+    <script>
+      // Atualiza ano corrente no footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
+
 
 
 
