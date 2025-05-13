@@ -6,7 +6,7 @@
     <title>Polydraft – Desenhos Técnicos Online</title>
     <meta
       name="description"
-      content="Plantas, detalhamentos e projetos elétricos entregues remotamente para todo o Brasil. Orçamento em 60 min. Revisões ilimitadas."
+      content="Plantas, detalhamentos e projetos elétricos entregues remotamente para todo o Brasil. Orçamento em 60 min. Revisões ilimitadas."
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500&family=Poppins:wght@600;700&display=swap"
@@ -18,6 +18,7 @@
         --blue-500: #00a0ff;
         --gray-50: #f5f7f9;
         --gray-900: #2e2e2e;
+        --green-wa: #25d366;
       }
       * {
         box-sizing: border-box;
@@ -38,7 +39,7 @@
         margin-bottom: 0.5em;
         color: var(--blue-700);
       }
-      /* Layout helpers */
+      /* Helpers */
       .container {
         width: 90%;
         max-width: 1140px;
@@ -49,13 +50,23 @@
         display: inline-block;
         background-color: var(--blue-700);
         color: #fff;
-        padding: 0.75rem 1.5rem;
+        padding: 0.8rem 1.8rem;
         border-radius: 4px;
         text-decoration: none;
         transition: background 0.3s ease;
       }
       .btn:hover {
         background-color: var(--blue-500);
+      }
+      /* Badge 48h */
+      .badge-48h {
+        display: inline-block;
+        background: linear-gradient(135deg, #ffa600, #ff6c00);
+        color: #fff;
+        font-weight: 700;
+        padding: 0.3rem 0.9rem;
+        border-radius: 999px;
+        margin-left: 0.5rem;
       }
       /* Hero */
       #hero {
@@ -95,6 +106,22 @@
       .service-card h3 {
         margin-top: 1rem;
         font-size: 1.15rem;
+      }
+      /* Why Us */
+      .why-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+      .why-item {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+      .why-item span {
+        font-size: 1.3rem;
+        color: var(--blue-700);
+        line-height: 1.2;
       }
       /* Process */
       .steps {
@@ -139,6 +166,26 @@
         background: var(--gray-50);
         font-weight: 600;
       }
+      /* Testimonials */
+      .testimonials {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      blockquote {
+        background: #fff;
+        border-left: 4px solid var(--blue-700);
+        padding: 1rem 1.25rem;
+        border-radius: 6px;
+        font-style: italic;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      blockquote footer {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        font-style: normal;
+        font-weight: 600;
+      }
       /* Form */
       form {
         display: grid;
@@ -148,7 +195,7 @@
       textarea,
       select {
         width: 100%;
-        padding: 0.6rem 0.75rem;
+        padding: 0.65rem 0.8rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-family: inherit;
@@ -180,15 +227,20 @@
       /* WhatsApp Floating */
       .wa-float {
         position: fixed;
-        width: 60px;
-        height: 60px;
         bottom: 20px;
         right: 20px;
+        background: var(--green-wa);
+        color: #fff;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         z-index: 1000;
-      }
-      .wa-float svg {
-        width: 100%;
-        height: auto;
       }
     </style>
   </head>
@@ -196,7 +248,7 @@
     <!-- Hero -->
     <section id="hero">
       <div class="container">
-        <h1>Desenhos técnicos prontos em até 48&nbsp;h</h1>
+        <h1>Desenhos técnicos prontos em até 48&nbsp;h <span class="badge-48h">48h DWG</span></h1>
         <p>Arquitetura, civil, mecânica e elétrica — <strong>100&nbsp;% online</strong>, revisões ilimitadas.</p>
         <a href="#orcamento" class="btn">Peça seu orçamento</a>
       </div>
@@ -210,74 +262,11 @@
           <div class="service-card">
             <div class="icon">🏠</div>
             <h3>Plantas Arquitetônicas</h3>
-            <p>NBR‑6492, cortes, fachadas e layout de interiores.</p>
+            <p>NBR-6492, cortes, fachadas e layout de interiores.</p>
           </div>
           <div class="service-card">
             <div class="icon">🏗️</div>
-            <h3>Detalhamento Estrutural</h3>
-            <p>Concreto armado, aço e madeira, NBR‑6118 &amp; 15.200.</p>
-          </div>
-          <div class="service-card">
-            <div class="icon">💡</div>
-            <h3>Projetos Elétricos</h3>
-            <p>Quadros, fiação, aterramento, NBR‑5410/NBR‑14039.</p>
-          </div>
-          <div class="service-card">
-            <div class="icon">⚙️</div>
-            <h3>Peças Mecânicas</h3>
-            <p>Explodidos, isométricos, GD&amp;T e listas de peças.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process">
-      <div class="container">
-        <h2>Como Funciona</h2>
-        <div class="steps">
-          <div class="step">
-            <h3>Envie arquivos ou croqui</h3>
-            <p>Preencha o formulário e faça upload do DWG, PDF ou sketch.</p>
-          </div>
-          <div class="step">
-            <h3>Receba orçamento em 60&nbsp;min</h3>
-            <p>Viabilidade, preço fechado e prazo no seu e-mail.</p>
-          </div>
-          <div class="step">
-            <h3>Entrega digital</h3>
-            <p>Receba DWG/DXF/PDF e solicite revisões ilimitadas por 7 dias.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cases -->
-    <section id="cases" style="background: var(--gray-50)">
-      <div class="container">
-        <h2>Casos de Sucesso</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Descrição</th>
-              <th>Tempo</th>
-              <th>Disciplina</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A‑019</td>
-              <td>Reforma residencial 120 m² – DF</td>
-              <td>36 h</td>
-              <td>Elétrico</td>
-            </tr>
-            <tr>
-              <td>C‑044</td>
-              <td>Detalhamento pórtico metálico 19 t – RS</td>
-              <td>52 h</td>
-              <td>Estrutural
-
+            <h3>Detalhamento Estrutural</
 
 
 
