@@ -31,7 +31,9 @@
         background-color: #ffffff;
         scroll-behavior: smooth;
       }
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         font-family: 'Poppins', sans-serif;
         margin-bottom: 0.5em;
         color: var(--blue-700);
@@ -60,21 +62,15 @@
         background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-500) 100%);
         color: #fff;
         text-align: center;
-        padding: 5rem 1rem 6rem;
+        padding: 6rem 1rem 7rem;
       }
       #hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
         color: #fff;
       }
       #hero p {
         font-size: 1.1rem;
         margin: 1.5rem 0 2.5rem;
-      }
-      #hero img {
-        max-width: 680px;
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
       /* Services */
       #services {
@@ -88,9 +84,13 @@
       .service-card {
         background: #fff;
         border-radius: 8px;
-        padding: 1.5rem;
+        padding: 2rem 1.5rem 1.75rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         text-align: center;
+      }
+      .service-card .icon {
+        font-size: 2.5rem;
+        line-height: 1;
       }
       .service-card h3 {
         margin-top: 1rem;
@@ -128,7 +128,8 @@
         width: 100%;
         border-collapse: collapse;
       }
-      th, td {
+      th,
+      td {
         padding: 0.75rem 0.5rem;
         border-bottom: 1px solid var(--gray-50);
         text-align: left;
@@ -143,14 +144,19 @@
         display: grid;
         gap: 1rem;
       }
-      input, textarea, select {
+      input,
+      textarea,
+      select {
         width: 100%;
         padding: 0.6rem 0.75rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-family: inherit;
       }
-      textarea { resize: vertical; min-height: 120px; }
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
       /* FAQ */
       details {
         background: #fff;
@@ -180,7 +186,7 @@
         right: 20px;
         z-index: 1000;
       }
-      .wa-float img {
+      .wa-float svg {
         width: 100%;
         height: auto;
       }
@@ -193,9 +199,6 @@
         <h1>Desenhos técnicos prontos em até 48&nbsp;h</h1>
         <p>Arquitetura, civil, mecânica e elétrica — <strong>100&nbsp;% online</strong>, revisões ilimitadas.</p>
         <a href="#orcamento" class="btn">Peça seu orçamento</a>
-        <div style="margin-top:4rem">
-          <img src="https://dummyimage.com/680x420/ffffff/0072ce.png&text=Preview+DWG" alt="Mockup Planta DWG" />
-        </div>
       </div>
     </section>
 
@@ -205,24 +208,24 @@
         <h2>Nossos Serviços</h2>
         <div class="services-grid">
           <div class="service-card">
-            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=A" alt="Arquitetura" />
+            <div class="icon">🏠</div>
             <h3>Plantas Arquitetônicas</h3>
             <p>NBR‑6492, cortes, fachadas e layout de interiores.</p>
           </div>
           <div class="service-card">
-            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=E" alt="Estrutural" />
+            <div class="icon">🏗️</div>
             <h3>Detalhamento Estrutural</h3>
-            <p>Concreto armado, aço e madeira, NBR‑6118 e 15.200.</p>
+            <p>Concreto armado, aço e madeira, NBR‑6118 &amp; 15.200.</p>
           </div>
           <div class="service-card">
-            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=P" alt="Elétrica" />
+            <div class="icon">💡</div>
             <h3>Projetos Elétricos</h3>
             <p>Quadros, fiação, aterramento, NBR‑5410/NBR‑14039.</p>
           </div>
           <div class="service-card">
-            <img src="https://dummyimage.com/80x80/0072ce/ffffff.png&text=M" alt="Mecânica" />
+            <div class="icon">⚙️</div>
             <h3>Peças Mecânicas</h3>
-            <p>Explodidos, isométricos, GD&T e listas de peças.</p>
+            <p>Explodidos, isométricos, GD&amp;T e listas de peças.</p>
           </div>
         </div>
       </div>
@@ -250,7 +253,7 @@
     </section>
 
     <!-- Cases -->
-    <section id="cases" style="background:var(--gray-50)">
+    <section id="cases" style="background: var(--gray-50)">
       <div class="container">
         <h2>Casos de Sucesso</h2>
         <table>
@@ -265,112 +268,15 @@
           <tbody>
             <tr>
               <td>A‑019</td>
-              <td>Reforma residencial 120 m² – DF</td>
-              <td>36 h</td>
+              <td>Reforma residencial 120 m² – DF</td>
+              <td>36 h</td>
               <td>Elétrico</td>
             </tr>
             <tr>
               <td>C‑044</td>
-              <td>Detalhamento pórtico metálico 19 t – RS</td>
-              <td>52 h</td>
-              <td>Estrutural</td>
-            </tr>
-            <tr>
-              <td>M‑031</td>
-              <td>Explodido de redutor engrenagens – MG</td>
-              <td>24 h</td>
-              <td>Mecânico</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Orçamento Form -->
-    <section id="orcamento">
-      <div class="container">
-        <h2>Peça seu Orçamento</h2>
-        <form action="https://formspree.io/f/SEU_TOKEN" method="POST">
-          <label>
-            Disciplina
-            <select name="disciplina" required>
-              <option value="">Selecione…</option>
-              <option>Arquitetura</option>
-              <option>Estrutural</option>
-              <option>Elétrica</option>
-              <option>Mecânica</option>
-            </select>
-          </label>
-          <label>
-            Área / Nº peças
-            <input type="text" name="area" placeholder="120 m² ou 3 vistas" required />
-          </label>
-          <label>
-            Prazo desejado
-            <input type="date" name="prazo" required />
-          </label>
-          <label>
-            Descrição adicional
-            <textarea name="descricao" placeholder="Norma de referência, nível de detalhe…" required></textarea>
-          </label>
-          <label>
-            Seu e‑mail
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            WhatsApp
-            <input type="tel" name="whatsapp" placeholder="+55 (DDD) 9xxxx‑xxxx" />
-          </label>
-          <button type="submit" class="btn">Enviar orçamento</button>
-        </form>
-        <p style="margin-top:1rem;font-size:0.9rem;color:#555">Prometemos responder em até 60 min no horário comercial.</p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" style="background:var(--gray-50)">
-      <div class="container">
-        <h2>Perguntas Frequentes</h2>
-        <details>
-          <summary>Vocês fazem visitas presenciais?</summary>
-          <p>Não, todo o processo é 100&nbsp;% online. Recebemos e entregamos arquivos digitais.</p>
-        </details>
-        <details>
-          <summary>Quais softwares utilizam?</summary>
-          <p>AutoCAD 2025, Revit 2024 e SolidWorks 2023.</p>
-        </details>
-        <details>
-          <summary>Emitimos ART/CREA?</summary>
-          <p>Sim, mediante solicitação e custo adicional.</p>
-        </details>
-        <details>
-          <summary>Quais formatos de entrega?</summary>
-          <p>DWG, DXF, PDF e IFC (para BIM).</p>
-        </details>
-        <details>
-          <summary>Qual o custo médio?</summary>
-          <p>A partir de R$ 6,90/m² ou R$ 120/desenho mecânico.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; <span id="year"></span> Polydraft Serviços Técnicos – Todos os direitos reservados.</p>
-      <p>Termos de Serviço | Política de SLA</p>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5511999999999" class="wa-float" target="_blank" rel="noopener">
-      <img src="https://static.thenounproject.com/png/3387005-200.png" alt="Fale no WhatsApp" />
-    </a>
-
-    <script>
-      // Atualiza ano corrente no footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
+              <td>Detalhamento pórtico metálico 19 t – RS</td>
+              <td>52 h</td>
+              <td>Estrutural
 
 
 
